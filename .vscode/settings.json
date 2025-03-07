@@ -1,0 +1,40 @@
+{
+  "debug-my-code.enabled": true,
+  "debug.allowBreakpointsEverywhere": true,
+  "typescript.tsc.autoDetect": "on",
+  "debug.javascript.usePreview": true,
+  "files.exclude": {
+    "out": false,
+    "dist": false,
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/dist": false
+  },
+  "search.exclude": {
+    "out": true,
+    "dist": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.mscode": true
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "files.eol": "\n",
+  "mscode.checkpoints.enabled": true,
+  "mscode.checkpoints.location": "${workspaceFolder}/.mscode/checkpoints",
+  "mscode.changes.location": "${workspaceFolder}/.mscode/changes",
+  "mscode.timelines.location": "${workspaceFolder}/.mscode/timelines",
+  "mscode.backup.location": "${workspaceFolder}/.mscode/initial-backup",
+  "mscode.views.singleView": true,
+  "mscode.views.enabled": true,
+  "mscode.views.container": "mscode-sidebar",
+  "mscode.sidebar.id": "mscode-sidebar",
+  "mscode.sidebar.title": "Copilot Checkpoints",
+  "mscode.sidebar.icon": "$(history)",
+  "mscode.publisher": "MurrayDeV"
+}

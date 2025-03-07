@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "watch",
+            "problemMatcher": "$tsc-watch",
+            "isBackground": true,
+            "presentation": {
+                "reveal": "never"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "group": "build",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "label": "Activer MSCode",
+            "type": "shell",
+            "command": "node ${workspaceFolder}/dist/extension.js",
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean Up",
+            "type": "shell",
+            "command": "echo 'Nettoyage terminé'",
+            "problemMatcher": []
+        }
+    ]
+}

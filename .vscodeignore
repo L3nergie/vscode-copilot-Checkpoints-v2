@@ -1,0 +1,16 @@
+.vscode/**
+.vscode-test/**
+src/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts
+# NE PAS ignorer node_modules/fs-extra et autres dépendances critiques
+# node_modules/**
+!node_modules/fs-extra/**
+!node_modules/adm-zip/**
+!node_modules/path/**
+!node_modules/os/**

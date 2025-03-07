@@ -1,0 +1,201 @@
+{
+  "name": "copilot-checkpoints-llm-murraydev",
+  "displayName": "Copilot Checkpoints",
+  "version": "2.0.0",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "mscode.checkpoints.start",
+        "title": "Copilot Checkpoints: Start"
+      },
+      {
+        "command": "mscode.initialBackup.create",
+        "title": "Copilot Checkpoints: Create Initial Backup"
+      },
+      {
+        "command": "mscode.checkpoint.create",
+        "title": "Copilot Checkpoints: Create Checkpoint"
+      },
+      {
+        "command": "mscode.structure.show",
+        "title": "Project structure: Show Structure"
+      },
+      {
+        "command": "mscode.tools.show",
+        "title": "Project tools: Show Tools"
+      },
+      {
+        "command": "mscode.timeline.createPoint",
+        "title": "Copilot Checkpoints: Create Timeline Point"
+      },
+      {
+        "command": "mscode.git.commit",
+        "title": "Copilot Checkpoints: Git Commit"
+      },
+      {
+        "command": "mscode.git.createBranch",
+        "title": "Copilot Checkpoints: Git Create Branch"
+      },
+      {
+        "command": "mscode.problems.refresh",
+        "title": "Copilot Checkpoints: Refresh Problem Statistics"
+      },
+      {
+        "command": "mscode.server.start",
+        "title": "Copilot Checkpoints: Start MCP Server"
+      },
+      {
+        "command": "mscode.server.stop",
+        "title": "Copilot Checkpoints: Stop MCP Server"
+      },
+      {
+        "command": "mscode.assistants.configure",
+        "title": "Configurer les assistants"
+      },
+      {
+        "command": "mscode.assistants.manage",
+        "title": "Gérer les assistants"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mscode-sidebar",
+          "title": "Copilot Checkpoints",
+          "icon": "$(history)"
+        }
+      ]
+    },
+    "views": {
+      "mscode-sidebar": [
+        {
+          "id": "account",
+          "name": "My Account",
+          "icon": "${account}",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-initial-backup",
+          "name": "Initial Backup",
+          "icon": "$(archive)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-checkpoints",
+          "name": "Checkpoints",
+          "icon": "$(git-commit)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-structure",
+          "name": "Structure",
+          "icon": "$(list-tree)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-tools",
+          "name": "Tools",
+          "icon": "$(tools)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-statistics",
+          "name": "Statistics",
+          "icon": "$(graph)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-changes",
+          "name": "Changes",
+          "icon": "$(diff)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-timelines",
+          "name": "Timelines",
+          "icon": "$(history)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-git-status",
+          "name": "Git Status",
+          "icon": "$(git)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-problem-stats",
+          "name": "Problem Statistics",
+          "icon": "$(warning)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-server",
+          "name": "MCP Server",
+          "icon": "$(server)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-assistants",
+          "name": "Assistants",
+          "icon": "$(person)",
+          "when": "mscode:viewsEnabled"
+        },
+        {
+          "id": "mscode-settings",
+          "name": "Settings",
+          "icon": "$(gear)",
+          "when": "mscode:viewsEnabled"
+        }
+      ],
+      "mscode": [
+        {
+          "id": "mscode-initial-backup",
+          "name": "Initial Backup"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "dev": "npm run compile && npm run watch",
+    "build": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "fix-vulnerabilities": "npm i mkdirp@latest minimist@latest && npm dedupe",
+    "clean-install": "rm -rf node_modules package-lock.json && npm install",
+    "postinstall": "npm rebuild fsevents && npm rebuild fs-extra"
+  },
+  "dependencies": {
+    "@types/vscode": "^1.84.0",
+    "adm-zip": "^0.5.10",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "minimatch": "^9.0.3",
+    "minimist": "^1.2.8",
+    "mkdirp": "^3.0.1",
+    "os": "^0.1.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "typescript": "^5.3.2"
+  },
+  "resolutions": {
+    "minimist": "^1.2.8",
+    "mkdirp": "^3.0.1"
+  }
+}

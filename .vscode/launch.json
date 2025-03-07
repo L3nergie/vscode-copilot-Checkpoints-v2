@@ -1,0 +1,63 @@
+{
+  "version": "0.2.0",
+  "compounds": [],
+  "configurations": [
+    {
+      "name": "Launch Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js",
+        "${workspaceFolder}/out/**/*.js"
+      ],
+      "preLaunchTask": "npm: build",
+      "postDebugTask": "Clean Up",
+      "sourceMaps": true,
+      "internalConsoleOptions": "neverOpen",
+      "showAsyncStacks": true,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "timeout": 30000,
+      "env": {
+        "MSCODE_DEBUG": "true",
+        "MSCODE_VIEWS_ENABLED": "true",
+        "MSCODE_VIEW_CONTAINER": "mscode-sidebar",
+        "PUBLISHER_NAME": "MurrayDeV",
+        "EXTENSION_NAME": "copilot-checkpoints-llm-murraydev"
+      }
+    },
+    {
+      "name": "Launch Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "--require",
+        "ts-node/register",
+        "--require",
+        "source-map-support/register",
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceFolder}/test/**/*.test.ts"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js",
+        "${workspaceFolder}/out/**/*.js"
+      ],
+      "preLaunchTask": "npm: build",
+      "postDebugTask": "Clean Up",
+      "sourceMaps": true,
+      "internalConsoleOptions": "neverOpen",
+      "showAsyncStacks": true,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "timeout": 30000
+    }
+  ]
+}
